@@ -1,21 +1,13 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld
-    msg="Hello Vue 3 + TypeScript + Vite + Vue-Router + Pinia + Supabase"
-  />
-</template>
-
-<script lang="ts">
+<script setup lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default defineComponent({
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-});
+import Layout from "./components/DefaultLayout.vue";
 </script>
+
+<template>
+  <Layout>
+    <RouterView></RouterView>
+  </Layout>
+</template>
 
 <style>
 #app {
