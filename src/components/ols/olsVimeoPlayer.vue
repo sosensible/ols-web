@@ -1,20 +1,22 @@
 <template>
-  <vue-vimeo-player
-    ref="olsVimeoPlayer"
-    :video-id="videoID"
-    :player-height="height"
-    @ready="onReady"
-    @pause="onPause"
-  />
-  <hr />
-  <button @click="play_video">Play</button>
-  &nbsp;
-  <button @click="pause_video">Pause</button>
-  &nbsp;
-  <button @click="mute_video">Mute</button>
-  &nbsp;
-  <button @click="unmute_video">un-Mute</button>
-  &nbsp;
+  <div>
+    <vue-vimeo-player
+      ref="olsVimeoPlayer"
+      :video-id="videoID"
+      :player-height="height"
+      @ready="onReady"
+      @pause="onPause"
+    />
+    <hr />
+    <button @click="play_video">Play</button>
+    &nbsp;
+    <button @click="pause_video">Pause</button>
+    &nbsp;
+    <button @click="mute_video">Mute</button>
+    &nbsp;
+    <button @click="unmute_video">un-Mute</button>
+    &nbsp;
+  </div>
 </template>
 
 <script setup>
