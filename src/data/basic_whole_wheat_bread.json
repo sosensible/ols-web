@@ -1,0 +1,133 @@
+{
+  "links": {
+    "self": "https://bakersdozen.kitchen/learn/whole_wheat_bread"
+  },
+  "data": {
+    "type": "course",
+    "id": "1",
+    "attributes": {
+      "uuid": "c_1",
+      "title": "Whole Wheat Bread",
+      "details": "Learn whole wheat bread basics from nutrician to skilled baking. ",
+      "image": "",
+      "created_Date": "",
+      "updated_Date": "",
+      "version": "1",
+      "iteration": "1",
+      "previous": "0",
+      "state": "alpha"
+    },
+    "relationships": {
+      "links": {
+        "instructors": "https://bakersdozen.kitchen/instructors/"
+      },
+      "data": [
+        {
+          "type": "people",
+          "id": "1"
+        },
+        {
+          "type": "people",
+          "id": "2"
+        },
+        {
+          "type": "ols-unit",
+          "id": "1"
+        }
+      ]
+    }
+  },
+  "included": [
+    {
+      "type": "people",
+      "id": "1",
+      "attributes": {
+        "uuid": "p_1",
+        "name": "Jeanine",
+        "fullname": "Jeanine Farrar",
+        "image": ""
+      },
+      "links": {
+        "related": "https://bakersdozen.kitchen/instructors/jeanine_farrar",
+        "public": ""
+      }
+    },
+    {
+      "type": "people",
+      "id": "2",
+      "attributes": {
+        "uuid": "p_2",
+        "name": "John",
+        "fullname": "John Farrar",
+        "image": ""
+      },
+      "links": {
+        "self": "https://bakersdozen.kitchen/instructors/john_farrar",
+        "public": ""
+      }
+    },
+    {
+      "type": "ols-unit",
+      "id": "1",
+      "attributes": {
+        "uuid": "u_1",
+        "title": "History: Many Grains",
+        "body": "",
+        "image": ""
+      },
+      "relationships": {
+        "data": [
+          {
+            "type": "ols-lesson",
+            "id": "1"
+          },
+          {
+            "type": "ols-lesson",
+            "id": "2"
+          },
+          {
+            "type": "ols-lesson",
+            "id": "3"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ols-lesson",
+      "id": "1",
+      "attributes": {
+        "uuid": "l_1",
+        "title": "Many Grains",
+        "image": "",
+        "content": [
+          "The many grains offer us different benefits."
+        ]
+      }
+    },
+    {
+      "type": "ols-lesson",
+      "id": "2",
+      "attributes": {
+        "uuid": "l_2",
+        "title": "More is Less",
+        "image": "",
+        "content": "whole vs enriched, +fresh is better"
+      }
+    },
+    {
+      "type": "ols-lesson",
+      "id": "3",
+      "attributes": {
+        "uuid": "l_3",
+        "title": "The Rise of Bread",
+        "image": "",
+        "content": "fermentation and the role of leven"
+      }
+    }
+  ],
+  "errors": [],
+  "meta": {
+    "standard": "OLS-COURSE-JSON",
+    "version": "1"
+  }
+}

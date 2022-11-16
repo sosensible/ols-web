@@ -5,7 +5,7 @@ const user = useUserStore();
 </script>
 
 <template>
-  <Header>
+  <div class="header">
     <div style="float: left">Logo</div>
     <div style="float: right">
       <span v-if="user.name.length">{{ user.name }}</span>
@@ -19,7 +19,7 @@ const user = useUserStore();
     <router-link to="/courses">Courses</router-link>
     &nbsp;|&nbsp;
     <router-link to="/creators">Creators</router-link>
-  </Header>
+  </div>
   <slot></slot>
   <footer>Footer</footer>
 </template>

@@ -29,3 +29,27 @@ Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
 ---
 Notes:
 * Make sure vue-vimeo-player works with latest vs 1.1.2 next or later version.
+
+## Adding in Bootstrap
+
+&gt; yarn add bootstrap@5.2.2
+
+? &gt; yarn add @popperjs/core
+&gt; yarn add -D sass
+
+setup: [Project Structure + Configure Vite](https://getbootstrap.com/docs/5.2/getting-started/vite/#project-structure)
+
+## CodeSpaces.io Resources
+
+* [Environment](https://codesandbox.io/docs/learn/repositories/env)
+* [Environment Variables](https://codesandbox.io/docs/learn/repositories/secrets)
+* [Repo Previews](https://codesandbox.io/docs/learn/repositories/preview)
+* [Available Dev Tools](https://codesandbox.io/docs/learn/repositories/devtools)
+* [CLI and Modules](https://codesandbox.io/docs/tutorial/cli-tool#6-move-it-under-setuptasks)
+* [Docker](https://codesandbox.io/docs/tutorial/getting-started-with-docker)
+* [Data Migrations](https://supabase.com/docs/guides/cli/local-development#database-migrations)
+
+and 
+
+* [Supabase JS](https://supabase.com/docs/reference/javascript)
+* [Pinia ORM ?](https://pinia-orm.codedredd.de/guide/getting-started/quick-start)
