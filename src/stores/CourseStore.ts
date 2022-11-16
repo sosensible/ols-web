@@ -23,8 +23,8 @@ export const useCourseStore = defineStore("CourseStore", {
       id: 0,
       title: "",
       courses: [],
-      instructors: [],
-      units: [],
+      instructor_index: [],
+      unit_index: [],
     };
   },
   actions: {
@@ -34,7 +34,7 @@ export const useCourseStore = defineStore("CourseStore", {
       const unitStore = useUnitStore();
       const peopleStore = usePeopleStore();
       const matchCourse = this.courses.find((iCourse) => {
-        return iCourse.uuid === newCourse.uuid;
+        return iCourse.id === newCourse.id;
       });
       if (!matchCourse) {
         const _course: Course = {
@@ -62,7 +62,7 @@ export const useCourseStore = defineStore("CourseStore", {
           });
           if (_unit) {
             unitStore.addUnit(_unit, newCourse.inc);
-            this.units.push(_unit.id);
+            this.unit_index.push(_unit.id);
             _unit.relationships.data.forEach((l_item, l_index, l_source) => {
               const _lesson = newCourse.included.find((incl) => {
                 return incl.type === "ols-lesson" && incl.id === l_item.id;
@@ -71,7 +71,7 @@ export const useCourseStore = defineStore("CourseStore", {
                 // store lesson
                 console.log({ unit: _unit, lesson: _lesson });
                 unitStore.lessonStore.addLesson(_lesson);
-                unitStore.lessons.push(_lesson.id);
+                unitStore.lesson_index.push(_lesson.id);
               }
             });
           }
@@ -83,7 +83,7 @@ export const useCourseStore = defineStore("CourseStore", {
           });
           if (_instructor) {
             peopleStore.addPerson(_instructor);
-            this.instructors.push(_instructor.id);
+            this.instructor_index.push(_instructor.id);
           }
         });
       }

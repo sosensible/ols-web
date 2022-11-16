@@ -23,7 +23,7 @@ export const useUnitStore = defineStore("UnitStore", {
       title: "",
       lessonStore: useLessonStore(),
       units: [],
-      lessons: [],
+      lesson_index: [],
     };
   },
   actions: {
