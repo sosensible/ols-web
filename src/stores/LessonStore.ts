@@ -18,7 +18,7 @@ type Lesson = {
 export const useLessonStore = defineStore("LessonStore", {
   state: () => {
     return {
-      id: 0,
+      active_id: 0,
       title: "",
       lessons: [],
     };
@@ -26,7 +26,6 @@ export const useLessonStore = defineStore("LessonStore", {
   actions: {
     addLesson(newLesson) {
       const matchLesson = this.lessons.find((iLesson) => {
-        console.log({ iLesson: iLesson });
         return iLesson.id === newLesson.id;
       });
       if (!matchLesson) {

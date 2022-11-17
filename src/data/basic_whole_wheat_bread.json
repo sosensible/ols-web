@@ -2,41 +2,82 @@
   "links": {
     "self": "https://bakersdozen.kitchen/learn/whole_wheat_bread"
   },
-  "data": {
-    "type": "course",
-    "id": "1",
-    "attributes": {
-      "uuid": "c_1",
-      "title": "Whole Wheat Bread",
-      "details": "Learn whole wheat bread basics from nutrician to skilled baking. ",
-      "image": "",
-      "created_Date": "",
-      "updated_Date": "",
-      "version": "1",
-      "iteration": "1",
-      "previous": "0",
-      "state": "alpha"
-    },
-    "relationships": {
-      "links": {
-        "instructors": "https://bakersdozen.kitchen/instructors/"
+  "data": [
+    {
+      "type": "course",
+      "id": "1",
+      "attributes": {
+        "uuid": "c_1",
+        "title": "Whole Wheat Bread",
+        "details": "Learn whole wheat bread basics from nutrician to skilled baking. ",
+        "image": "",
+        "created_Date": "",
+        "updated_Date": "",
+        "version": "1",
+        "iteration": "1",
+        "previous": "0",
+        "state": "alpha"
       },
-      "data": [
-        {
-          "type": "people",
-          "id": "1"
+      "relationships": {
+        "links": {
+          "instructors": "https://bakersdozen.kitchen/instructors/"
         },
-        {
-          "type": "people",
-          "id": "2"
+        "data": [
+          {
+            "type": "people",
+            "id": "1"
+          },
+          {
+            "type": "people",
+            "id": "2"
+          },
+          {
+            "type": "ols-unit",
+            "id": "1"
+          }
+        ]
+      }
+    },
+    {
+      "type": "course",
+      "id": "2",
+      "attributes": {
+        "uuid": "c_2",
+        "title": "Life Vision Quest",
+        "details": "How Will You Influence Your Future Today",
+        "image": "",
+        "created_Date": "",
+        "updated_Date": "",
+        "version": "1",
+        "iteration": "1",
+        "previous": "0",
+        "state": "alpha"
+      },
+      "relationships": {
+        "links": {
+          "instructors": "https://lvq.today/instructors/"
         },
-        {
-          "type": "ols-unit",
-          "id": "1"
-        }
-      ]
+        "data": [
+          {
+            "type": "people",
+            "id": "2"
+          },
+          {
+            "type": "ols-unit",
+            "id": "2"
+          },
+          {
+            "type": "ols-unit",
+            "id": "3"
+          },
+          {
+            "type": "ols-unit",
+            "id": "4"
+          }
+        ]
+      }
     }
-  },
+  ],
   "included": [
     {
       "type": "people",
@@ -99,9 +140,7 @@
         "uuid": "l_1",
         "title": "Many Grains",
         "image": "",
-        "content": [
-          "The many grains offer us different benefits."
-        ]
+        "content": ["The many grains offer us different benefits."]
       }
     },
     {
@@ -122,6 +161,90 @@
         "title": "The Rise of Bread",
         "image": "",
         "content": "fermentation and the role of leven"
+      }
+    },
+    {
+      "type": "ols-unit",
+      "id": "2",
+      "attributes": {
+        "uuid": "u_2",
+        "title": "Reality Mapping",
+        "body": "",
+        "image": ""
+      },
+      "relationships": {
+        "data": [
+          {
+            "type": "ols-lesson",
+            "id": "4"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ols-lesson",
+      "id": "4",
+      "attributes": {
+        "uuid": "l_4",
+        "title": "Five Living Rewards",
+        "image": "",
+        "content": "When you want a tomorrow to work out."
+      }
+    },
+    {
+      "type": "ols-unit",
+      "id": "3",
+      "attributes": {
+        "uuid": "u_3",
+        "title": "For Better For Worse",
+        "body": "",
+        "image": ""
+      },
+      "relationships": {
+        "data": [
+          {
+            "type": "ols-lesson",
+            "id": "5"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ols-lesson",
+      "id": "5",
+      "attributes": {
+        "uuid": "l_5",
+        "title": "Challenges, not weaknesses",
+        "image": "",
+        "content": "Mindset Matters"
+      }
+    },
+    {
+      "type": "ols-unit",
+      "id": "4",
+      "attributes": {
+        "uuid": "u_4",
+        "title": "Improving the Journey",
+        "body": "",
+        "image": ""
+      },
+      "relationships": {
+        "data": [
+          {
+            "type": "ols-lesson",
+            "id": "6"
+          }
+        ]
+      }
+    },
+    {
+      "type": "ols-lesson",
+      "id": "6",
+      "attributes": {
+        "uuid": "l_6",
+        "title": "Boundaries That Help",
+        "image": "",
+        "content": "Beyond fences and walls we find edges of the road where we journey."
       }
     }
   ],

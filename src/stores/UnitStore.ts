@@ -19,17 +19,14 @@ type Unit = {
 export const useUnitStore = defineStore("UnitStore", {
   state: () => {
     return {
-      id: 0,
-      title: "",
+      active_id: 0,
       lessonStore: useLessonStore(),
       units: [],
-      lesson_index: [],
     };
   },
   actions: {
     addUnit(newUnit) {
       const matchUnit = this.units.find((iUnit) => {
-        console.log({ iUnit: iUnit });
         return iUnit.id === newUnit.id;
       });
       if (!matchUnit) {
@@ -45,6 +42,7 @@ export const useUnitStore = defineStore("UnitStore", {
           updated_Date: newUnit.attributes.updated_Date,
           uuid: newUnit.attributes.uuid,
           version: newUnit.attributes.version,
+          lesson_index: newUnit.lesson_index,
         };
         this.units.push(_unit);
       }
