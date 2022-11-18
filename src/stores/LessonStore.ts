@@ -18,7 +18,7 @@ type Lesson = {
 export const useLessonStore = defineStore("LessonStore", {
   state: () => {
     return {
-      id: 0,
+      active_id: 0,
       title: "",
       lessons: [],
     };
@@ -26,7 +26,6 @@ export const useLessonStore = defineStore("LessonStore", {
   actions: {
     addLesson(newLesson) {
       const matchLesson = this.lessons.find((iLesson) => {
-        console.log({ iLesson: iLesson });
         return iLesson.id === newLesson.id;
       });
       if (!matchLesson) {
@@ -50,11 +49,20 @@ export const useLessonStore = defineStore("LessonStore", {
       const newLesson = lessonPull.data.attributes;
       this.addLesson(newLesson);
     },
+    setActiveLesson(lesson_id) {
+      const targetLesson = this.lessons.find((lesson) => lesson.id === lesson_id);
+      if( targetLesson ) {
+        this.active_id = lesson_id;
+      }
+    }
   },
   getters: {
     lessonList(state) {
       return state.lessons;
     },
+    activeLesson(state) {
+      return state.lessons.find((lesson) => lesson.id === state.active_id);
+    }
   },
 });
 
