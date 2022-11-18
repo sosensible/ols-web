@@ -60,6 +60,9 @@ export const useLessonStore = defineStore("LessonStore", {
     lessonList(state) {
       return state.lessons;
     },
+    activeLesson(state) {
+      return state.lessons.find((lesson) => lesson.id === state.active_id);
+    }
   },
 });
 
