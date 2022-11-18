@@ -28,16 +28,24 @@ const router = createRouter({
     {
       path: "/courses/:course_id/unit/:unit_id",
       name: "course_unit",
-      component: () => import("@/views/courses/CourseList.vue"),
+      props: true,
+      component: () => import("@/views/courses/UnitView.vue"),
     },
     {
       path: "/courses/:course_id/unit/:unit_id/lessons/:lesson_id",
       name: "course_lesson",
+      props: true,
       component: () => import("@/views/courses/CourseList.vue"),
     },
     {
       path: "/creators",
       name: "creators",
+      component: () => import("@/views/creators/CreatorList.vue"),
+    },
+    {
+      path: "/creators/:id",
+      name: "creator",
+      props: true,
       component: () => import("@/views/creators/CreatorList.vue"),
     },
     {

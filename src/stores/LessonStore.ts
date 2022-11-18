@@ -49,6 +49,12 @@ export const useLessonStore = defineStore("LessonStore", {
       const newLesson = lessonPull.data.attributes;
       this.addLesson(newLesson);
     },
+    setActiveLesson(lesson_id) {
+      const targetLesson = this.lessons.find((lesson) => lesson.id === lesson_id);
+      if( targetLesson ) {
+        this.active_id = lesson_id;
+      }
+    }
   },
   getters: {
     lessonList(state) {

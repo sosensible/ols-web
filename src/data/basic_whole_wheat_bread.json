@@ -113,7 +113,7 @@
       "attributes": {
         "uuid": "u_1",
         "title": "History: Many Grains",
-        "body": "",
+        "content": "This is the content of the bread grain history.",
         "image": ""
       },
       "relationships": {
@@ -169,7 +169,7 @@
       "attributes": {
         "uuid": "u_2",
         "title": "Reality Mapping",
-        "body": "",
+        "content": "This is the content of reality mapping.",
         "image": ""
       },
       "relationships": {
@@ -197,7 +197,7 @@
       "attributes": {
         "uuid": "u_3",
         "title": "For Better For Worse",
-        "body": "",
+        "content": "This is the content of for better for worse.",
         "image": ""
       },
       "relationships": {
@@ -225,7 +225,7 @@
       "attributes": {
         "uuid": "u_4",
         "title": "Improving the Journey",
-        "body": "",
+        "content": "This is the content of improving the journey.",
         "image": ""
       },
       "relationships": {

@@ -23,7 +23,7 @@ type Course = {
 export const useCourseStore = defineStore("CourseStore", {
   state: () => {
     return {
-      active_id: "0",
+      active_id: 0,
       courses: [],
       creator_index: [],
       unitStore: useUnitStore(),
@@ -74,8 +74,8 @@ export const useCourseStore = defineStore("CourseStore", {
                   return incl.type === "ols-lesson" && incl.id === l_item.id;
                 });
                 if (_lesson) {
-                  unitStore.lessonStore.addLesson(_lesson);
                   _unit.lesson_index.push(_lesson.id);
+                  unitStore.lessonStore.addLesson(_lesson);
                 }
               });
               unitStore.addUnit(_unit, newCourse.include);
@@ -95,13 +95,26 @@ export const useCourseStore = defineStore("CourseStore", {
             }
           });
           this.courses.push(_course);
-          this.active_id = newCourse.id;
         }
       });
+      console.log({load:this.active_id});
+      if( this.active_id === 0 ) {
+        this.setActiveCourse(this.courses[0].id);
+      } else {
+        console.log('course already set')
+      }
     },
     importCourse() {
       const newCourses = coursePull;
       this.addCourse(newCourses);
+    },
+    setActiveCourse(course_id) {
+      const unitStore = useUnitStore();
+      const targetCourse = this.courses.find((course) => course.id === course_id);
+      if(targetCourse){
+        unitStore.setActiveUnit(targetCourse.unit_index[0]);
+        this.active_id = course_id;
+      }
     },
   },
   getters: {
@@ -116,28 +129,24 @@ export const useCourseStore = defineStore("CourseStore", {
     units(state) {
       const unitStore = useUnitStore();
       const matchedUnits = unitStore.units.filter((unit) => {
-        return state.activeCourse.unit_index.filter((id) => {
-          return id === unit.id;
-        });
+        return state.activeCourse.unit_index.includes(unit.id);
       });
       return matchedUnits;
     },
     instructors(state) {
       const peopleStore = usePeopleStore();
       const matchedInstructors = peopleStore.people.filter((person) => {
-        return state.activeCourse.instructor_index.filter((id) => {
-          return id === person.id;
-        });
+        return state.activeCourse.instructor_index.includes(person.id);
       });
       return matchedInstructors;
     },
     creators(state) {
       const peopleStore = usePeopleStore();
       return peopleStore.people.filter((person) =>
-        state.creator_index.some((id) => id === person.id)
+        state.creator_index.includes(person.id)
       );
     },
-  },
+  }
 });
 
 if (import.meta.hot) {
