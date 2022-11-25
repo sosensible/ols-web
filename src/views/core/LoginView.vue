@@ -8,4 +8,5 @@ const user = useUserStore();
   Login Page
   <hr />
   <input v-model="user.name" />
+  <button>Now</button>
 </template>
